@@ -1,5 +1,5 @@
 body {
-    background: url("../img/wallpaper.jpg") no-repeat center top fixed;
+    background: url("../img/XSTORE.jpg") no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -8,9 +8,8 @@ body {
 }
 
 #start-purchase-btn {
-    background-color: #23364e;
-    border-color: #23364e;
     color: white;
+    margin-top: 24px;
 }
 
 #start-purchase-link {

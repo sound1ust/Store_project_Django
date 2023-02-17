@@ -7,18 +7,18 @@
 
 {% block  content %}
     <section>
-        <!--    <div class="alert alert-light text-center" role="alert">-->
-        <!--        Информационное сообщение-->
-        <!--    </div>-->
+            <div class="alert alert-light alert-dismissible fade show text-center"
+                 style="margin-top: 16px; padding: 5px;" role="alert">
+                БЕСПЛАТНАЯ ДОСТАВКА ОТ 10 ТЫС РУБ.
+                <a href="#" class="close d-flex ml-auto justify-content-center align-items-center px-3"
+                   data-dismiss="alert" style="padding-top: 5px;">
+            <i class="fas fa-times"></i>
+        </a>
+            </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1 class="mt-5">Store</h1>
-                    <p>
-                        Новые образы и лучшие бренды на Store.
-                        Бесплатная доставка по всему миру! Аутлет: до -70% Собственный бренд. -20% новым покупателям.
-                    </p>
-                    <button id="start-purchase-btn" type="button" class="btn btn-lg">
+                    <button id="start-purchase-btn" type="button" class="btn btn-success btn-lg">
                         <a id="start-purchase-link" href="{% url 'products:index' %}">
                             Начать покупки
                         </a>

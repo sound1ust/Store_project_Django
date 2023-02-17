@@ -64,9 +64,9 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: white;
     text-align: left;
-    background-color: #fff;
+    background: url("../img/XSTORE.jpg") no-repeat center top fixed
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4687,9 +4687,9 @@ input[type=button].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: black;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 2px solid #53A551;
     border-radius: 0.25rem;
 }
 
