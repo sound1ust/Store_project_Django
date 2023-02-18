@@ -7,7 +7,7 @@ from users.models import User
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control py-4',
-        'placeholder': 'Введите имя пользователя'
+        'placeholder': 'Введите логин'
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4',
@@ -30,7 +30,7 @@ class UserRegistrationForm(UserCreationForm):
     }))
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control py-4',
-        'placeholder': 'Введите имя пользователя'
+        'placeholder': 'Придумайте логин'
     }))
     email = forms.CharField(widget=forms.EmailInput(attrs={
         'class': 'form-control py-4',
@@ -38,7 +38,7 @@ class UserRegistrationForm(UserCreationForm):
     }))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4',
-        'placeholder': 'Введите пароль'
+        'placeholder': 'Придумайте пароль'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4',

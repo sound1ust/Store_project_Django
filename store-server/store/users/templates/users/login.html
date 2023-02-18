@@ -30,7 +30,7 @@
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <label class="small mb-1" for="{{ form.username.id_for_label }}">
-                                            Имя пользователя
+                                            Логин
                                         </label>
                                         {{ form.username }}
                                     </div>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="card-footer text-center">
                                 <div class="small"><a style="color: white;" href="{% url 'users:registration' %}">
-                                    Нужен аккаунт? Зарегистрируйся!
+                                    Нужен аккаунт? Зарегистрируйтесь!
                                     </a>
                                 </div>
                             </div>

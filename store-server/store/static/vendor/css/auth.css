@@ -66,7 +66,6 @@ body {
     line-height: 1.5;
     color: white;
     text-align: left;
-    background: url("../img/XSTORE.jpg") no-repeat center top fixed
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2025,7 +2024,7 @@ pre code {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 2px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2049,9 +2048,8 @@ pre code {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: #53A551;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-control::-webkit-input-placeholder {
@@ -6640,7 +6638,8 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #c4d4e7 !important;
+    background: url("../img/XSTORE.jpg") !important;
+    background-color: black;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
