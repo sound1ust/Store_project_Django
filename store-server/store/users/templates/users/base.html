@@ -10,8 +10,19 @@
     <meta name="author" content=""/>
     <title>{{ title }}</title>
     <link href="{% static 'vendor/css/auth.css' %}" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
-            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/403cffa315.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" href="{% static 'vendor/img/favicons/apple-touch-icon.png' %}">
+    <!-- 180x180 - ставим первым для safari -->
+    <link rel="icon" href="{% static 'vendor/img/favicons/favicon.ico' %}" sizes="any"><!-- 32x32 -->
+    <link rel="icon" href="{% static 'vendor/img/favicons/icon.svg' %}" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="yandex-tableau-widget" href="/tableau.json">
+
+    <style>
+
+    </style>
+
 </head>
 <body class="bg-primary">
 <div id="layoutAuthentication">

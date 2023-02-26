@@ -13,11 +13,18 @@
 
     <title>{{ title }}</title>
 
+    <link rel="apple-touch-icon" href="{% static 'vendor/img/favicons/apple-touch-icon.png' %}">
+    <!-- 180x180 - ставим первым для safari -->
+    <link rel="icon" href="{% static 'vendor/img/favicons/favicon.ico' %}" sizes="any"><!-- 32x32 -->
+    <link rel="icon" href="{% static 'vendor/img/favicons/icon.svg' %}" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="yandex-tableau-widget" href="/tableau.json">
+
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    {% block  css %} {% endblock %}
+    {% block css %} {% endblock %}
 
 </head>
 
@@ -47,7 +54,6 @@
                      src="{% if user.image %} {{ user.image.url }}
                      {% else %} {% static 'vendor/img/users/default_avatar.jpg' %} {% endif %}"
                      class="img-thumbnail">
-<!--                        <i class="fas fa-user-circle"></i>-->
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
