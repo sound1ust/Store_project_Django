@@ -20,13 +20,14 @@ class IndexViewTestCase(TestCase):
 class ProductsListViewTestCase(TestCase):
     fixtures = ['categories.json', 'goods.json']
 
+    def setUp(self):
+        self.products = Product.objects.all()
+        self.pagination = ProductsListView.paginate_by
+
     def _common_tests(self, response):
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(response.context_data['title'], 'Каталог Xstore')
         self.assertTemplateUsed(response, 'products/products.html')
-
-    def setUp(self):
-        self.products = Product.objects.all()
 
     def test_list(self):
         path = reverse('products:index')
@@ -35,7 +36,7 @@ class ProductsListViewTestCase(TestCase):
         self._common_tests(response=response)
         self.assertEqual(
             list(response.context_data['object_list']),
-            list(self.products[:ProductsListView.paginate_by])
+            list(self.products[:self.pagination])
         )
 
     def test_list_with_category(self):
@@ -46,5 +47,5 @@ class ProductsListViewTestCase(TestCase):
         self._common_tests(response=response)
         self.assertEqual(
             list(response.context_data['object_list']),
-            list(self.products.filter(category_id=category.id)[:ProductsListView.paginate_by])
+            list(self.products.filter(category_id=category.id)[:self.pagination])
         )
