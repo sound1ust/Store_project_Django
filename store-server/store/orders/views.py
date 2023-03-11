@@ -5,11 +5,14 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 from yookassa import Configuration, Payment
 
 from common.views import TitleMixin
 from orders.forms import OrderForm
+from orders.models import Order
 from products.models import Basket
 
 Configuration.account_id = settings.SHOP_ID
@@ -24,6 +27,27 @@ class SuccessTemplateView(TitleMixin, TemplateView):
 class CancelTemplateView(TitleMixin, TemplateView):
     template_name = 'orders/cancel.html'
     title = 'Заказ отменен'
+
+
+class OrderListView(TitleMixin, ListView):
+    template_name = 'orders/orders.html'
+    title = 'Заказы'
+    queryset = Order.objects.all()
+    ordering = ('-created')
+
+    def get_queryset(self):
+        queryset = super(OrderListView, self).get_queryset()
+        return queryset.filter(initiator=self.request.user)
+
+
+class OrderDetailedView(DetailView):
+    template_name = 'orders/order.html'
+    model = Order
+
+    def get_context_data(self, **kwargs):
+        context = super(OrderDetailedView, self).get_context_data(**kwargs)
+        context['title'] = f'Заказ №{self.object.id}'
+        return context
 
 
 class OrderCreateView(TitleMixin, CreateView):
@@ -49,6 +73,8 @@ class OrderCreateView(TitleMixin, CreateView):
             "capture": True,
             "description": f'Заказ №{self.object.id}'
         }, idempotence_key)
+
+        Order.objects.get(id=self.object.id).update_after_payment()
         return HttpResponseRedirect(payment.confirmation.confirmation_url, status=HTTPStatus.SEE_OTHER)
 
     def form_valid(self, form):
