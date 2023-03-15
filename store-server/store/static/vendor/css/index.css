@@ -1,11 +1,9 @@
 body {
-    background: url("../img/XSTORE.jpg") no-repeat center top fixed;
-    background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    padding-top: 56px;
+    padding-top: 44px;
 }
 
 #start-purchase-btn {

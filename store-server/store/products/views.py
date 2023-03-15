@@ -16,7 +16,7 @@ class IndexView(TitleMixin, TemplateView):
 class ProductsListView(TitleMixin, ListView):
     model = Product
     template_name = 'products/products.html'
-    paginate_by = 3
+    paginate_by = 15
     title = 'Каталог Xstore'
 
     def get_queryset(self):
