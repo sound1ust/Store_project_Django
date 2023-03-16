@@ -41,6 +41,11 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="nav-link text-white" href="{% url 'products:about' %}">О нас</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -55,7 +60,7 @@
                      {% else %} {% static 'vendor/img/users/default_avatar.jpg' %} {% endif %}"
                      class="img-thumbnail">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-macos" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu dropdown-menu-macos" aria-labelledby="navbarDropdown" style="font-size: 14px;">
                         <li>
                             <a class="dropdown-item" href="{% url 'users:profile' user.id %}">Личный кабинет</a>
                         </li>

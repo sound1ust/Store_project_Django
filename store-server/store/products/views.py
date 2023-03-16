@@ -8,9 +8,15 @@ from common.views import TitleMixin
 from products.models import Basket, Product, ProductCategory
 
 
-class IndexView(TitleMixin, TemplateView):
+class IndexView(TitleMixin, ListView):
+    model = Product
     template_name = 'products/index.html'
     title = 'Xstore'
+
+    def get_queryset(self):
+        queryset = super(IndexView, self).get_queryset()
+        is_new = self.kwargs.get('is_new')
+        return queryset.filter(is_new=is_new) if is_new else queryset
 
 
 class ProductsListView(TitleMixin, ListView):
@@ -33,6 +39,11 @@ class ProductsListView(TitleMixin, ListView):
         else:
             context['categories'] = categories
         return context
+
+
+class AboutView(TitleMixin, TemplateView):
+    template_name = 'products/about.html'
+    title = 'О нас'
 
 
 @login_required

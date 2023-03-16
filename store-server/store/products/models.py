@@ -22,6 +22,8 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='products_images')
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
+    is_new = models.BooleanField(default=False)
+    short_name = models.TextField(max_length=128)
 
     class Meta:
         verbose_name = 'Product'
