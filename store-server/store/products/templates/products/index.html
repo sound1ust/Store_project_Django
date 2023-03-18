@@ -5,7 +5,7 @@
 <link href="{% static 'vendor/css/index.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block  content %}
+{% block content %}
 <section>
     <div class="alert alert-primary alert-dismissible fade show text-center"
          style="padding: 5px;" role="alert">
@@ -58,10 +58,8 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">{{ product.name }}<span
-                                class="text-muted">It’ll blow your mind.</span></h2>
-                        <p class="lead">Some great placeholder content for the first featurette here. Imagine some
-                            exciting prose here.</p>
+                        <h2 class="featurette-heading fw-normal lh-1">{{ product.short_name }}</h2>
+                        <p class="lead">{{ product.slogan }}</p>
                     </div>
                     <div class="col-md-5">
                         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"

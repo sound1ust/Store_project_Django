@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 
 from common.views import TitleMixin
 from products.models import Basket, Product, ProductCategory
+from django.shortcuts import render
 
 
 class IndexView(TitleMixin, ListView):
@@ -15,8 +16,7 @@ class IndexView(TitleMixin, ListView):
 
     def get_queryset(self):
         queryset = super(IndexView, self).get_queryset()
-        is_new = self.kwargs.get('is_new')
-        return queryset.filter(is_new=is_new) if is_new else queryset
+        return queryset.filter(is_new=True).order_by('name')
 
 
 class ProductsListView(TitleMixin, ListView):
@@ -44,6 +44,11 @@ class ProductsListView(TitleMixin, ListView):
 class AboutView(TitleMixin, TemplateView):
     template_name = 'products/about.html'
     title = 'О нас'
+
+
+def product_detail(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'products/product_detail.html', {'product': product})
 
 
 @login_required

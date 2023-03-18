@@ -24,6 +24,7 @@ class Product(models.Model):
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
     is_new = models.BooleanField(default=False)
     short_name = models.TextField(max_length=128)
+    slogan = models.TextField(max_length=128, default='', blank=True)
 
     class Meta:
         verbose_name = 'Product'
