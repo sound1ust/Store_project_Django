@@ -21,6 +21,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='products_images')
+    promo_image = models.ImageField(upload_to='promo_images', blank=True)
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
     is_new = models.BooleanField(default=False)
     short_name = models.TextField(max_length=128)

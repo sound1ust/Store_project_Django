@@ -54,27 +54,75 @@
 
                 <!-- START THE FEATURETTES -->
                 {% for product in object_list %}
-                <hr class="featurette-divider">
-
-                <div class="row featurette">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">{{ product.short_name }}</h2>
-                        <p class="lead">{{ product.slogan }}</p>
-                    </div>
-                    <div class="col-md-5">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                             width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
-                             aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#eee"/>
-                            <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-                        </svg>
-
+                <div class="card bg-light text-dark text-center">
+                    <img class="card-img"
+                         src="{% if product.promo_image %} {{ product.promo_image.url }}
+                         {% else %} {{ product.image.url }} {% endif %}" alt="{{ product.short_name }}">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">{{ product.short_name }}</h1>
+                        <h3 class="card-text">{{ product.slogan }}</h3>
+                        <a href="{% url 'products:product_detail' product.id %}">Подробнее</a>
                     </div>
                 </div>
                 {% endfor %}
                 <!-- /END THE FEATURETTES -->
 
+                <footer class="container py-5">
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="d-block mb-2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                                <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                                <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                                <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                                <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                                <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+                            </svg>
+                            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Cool stuff</a></li>
+                                <li><a class="text-muted" href="#">Random feature</a></li>
+                                <li><a class="text-muted" href="#">Team feature</a></li>
+                                <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                                <li><a class="text-muted" href="#">Another one</a></li>
+                                <li><a class="text-muted" href="#">Last time</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Resource</a></li>
+                                <li><a class="text-muted" href="#">Resource name</a></li>
+                                <li><a class="text-muted" href="#">Another resource</a></li>
+                                <li><a class="text-muted" href="#">Final resource</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Business</a></li>
+                                <li><a class="text-muted" href="#">Education</a></li>
+                                <li><a class="text-muted" href="#">Government</a></li>
+                                <li><a class="text-muted" href="#">Gaming</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>About</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Team</a></li>
+                                <li><a class="text-muted" href="#">Locations</a></li>
+                                <li><a class="text-muted" href="#">Privacy</a></li>
+                                <li><a class="text-muted" href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
             </div><!-- /.container -->
         </div>
     </div>
