@@ -64,7 +64,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: white;
+    color: #212529;
     text-align: left;
 }
 
@@ -2024,7 +2024,7 @@ pre code {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 2px solid #ced4da;
+    border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2048,8 +2048,9 @@ pre code {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #53A551;
+    border-color: #80bdff;
     outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-control::-webkit-input-placeholder {
@@ -4685,9 +4686,9 @@ input[type=button].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: black;
+    background-color: #fff;
     background-clip: border-box;
-    border: 2px solid #53A551;
+    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
 
@@ -6638,8 +6639,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background: url("../img/XSTORE.jpg") !important;
-    background-color: black;
+    background-color: #c4d4e7 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,

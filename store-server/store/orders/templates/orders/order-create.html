@@ -3,9 +3,6 @@
 
 {% block  content %}
     <section>
-        <div class="alert alert-warning text-center" role="alert">
-            Пожалуйста, заполните адрес электронной почты.
-        </div>
         <div class="container">
             <div class="py-5 text-center">
                 <h1>Оформление заказа</h1>
@@ -21,7 +18,7 @@
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-0">{{ basket.product.name }}</h6>
-                                <small class="text-muted">{{ basket.product.quantity }}</small>
+                                <small class="text-muted">{{ basket.quantity }}</small>
                             </div>
                             <span class="text-muted">{{ basket.sum|intcomma }} руб.</span>
                         </li>
