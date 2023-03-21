@@ -2,12 +2,20 @@
 
 My first project on Django
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/111009132/219802638-a5efc169-0918-41a8-bcf6-d01d84494d45.png">
+![index](https://user-images.githubusercontent.com/111009132/226716835-b1ad5f0a-2742-4013-a92f-296cbef4fee1.png)
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/111009132/219803096-5b7fff0f-5309-401d-8d48-dab2e5641627.png">
+![products](https://user-images.githubusercontent.com/111009132/226716829-3edd23d0-280c-4d53-8a59-d85f707ae71e.png)
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/111009132/219802792-73135853-6c00-44ce-924c-ff2613ce1bff.png">
+![product](https://user-images.githubusercontent.com/111009132/226716822-15269a77-5fde-4322-8a5e-9b8f69c4c732.png)
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/111009132/219804394-bec0c2d1-df4d-492c-a284-7c9a694aed0d.png">
+![auth](https://user-images.githubusercontent.com/111009132/226716848-10bc2fff-89fc-40e4-8f64-693ad481cc36.png)
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/111009132/219802778-878be512-b2d7-4af1-9855-c5a32c1f351f.png">
+![reg](https://user-images.githubusercontent.com/111009132/226716859-6d8b603d-cae1-48be-baa3-6b44907f791b.png)
+
+![profile](https://user-images.githubusercontent.com/111009132/226716855-406bc597-f3cb-46cc-97b7-5fe05a9ecc24.png)
+
+![order-create](https://user-images.githubusercontent.com/111009132/226716850-6d1ab8be-e9c0-430e-a2e6-e0d9c3cbebd3.png)
+
+![orders](https://user-images.githubusercontent.com/111009132/226716852-62f338fb-6128-41a5-84cd-e84cda79ec01.png)
+
+![order](https://user-images.githubusercontent.com/111009132/226716851-cc8b7229-157d-4bdd-914f-3f91049b271d.png)
