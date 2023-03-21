@@ -3,22 +3,63 @@
 {% load humanize %}
 
 {% block  css %}
-    <link href="{% static 'vendor/css/products.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/product-detail.css' %}" rel="stylesheet">
 {% endblock %}
 
+<!--        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">-->
+<!--            <div class="col-md-5 p-lg-5 mx-auto my-5">-->
+<!--                <img class="card-img" src="{{ product.image.url }}" alt="Card image">-->
+<!--                <h1 class="display-4 fw-normal">{{ product.name }}</h1>-->
+<!--                <h3 class="display-4 fw-normal font-weight-bold">{{ product.price }} BYN</h3>-->
+<!--                <p class="lead fw-normal">{{ product.description }}</p>-->
+<!--                <a class="btn btn-outline-success"-->
+<!--                   href="{% url 'products:basket_add' product.id %}">-->
+<!--                    Добавить в корзину</a>-->
+<!--            </div>-->
+<!--            <div class="product-device shadow-sm d-none d-md-block"></div>-->
+<!--            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>-->
+<!--        </div>-->
+
 {% block  content %}
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-            <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <img class="card-img" src="{{ product.image.url }}" alt="Card image">
-                <h1 class="display-4 fw-normal">{{ product.name }}</h1>
-                <h3 class="display-4 fw-normal font-weight-bold">{{ product.price }} BYN</h3>
-                <p class="lead fw-normal">{{ product.description }}</p>
-                <a class="btn btn-outline-success"
+    <div class="container my-5">
+
+        <!-- Product Images Carousel -->
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <div><img src="{{ product.image.url }}" alt="Product Image" class="img-fluid"></div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-md-6" id="content">
+                <h1>{{ product.name }}</h1>
+                <p class="lead my-4">{{ product.price }} BYN</p>
+
+                <!-- Product Description -->
+                <p class="text-muted">
+                    {{ product.description }}
+                </p>
+
+                <!-- Product Attributes -->
+                {% if product.colors.all %}
+                <div class="row my-4">
+                    <div class="col-sm-4">
+                        <label>Цвет:</label>
+                        <select class="form-control">
+                            {% for color in product.colors.all %}
+                            <option>{{ color }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Add to Cart Button -->
+                <a class="btn btn-primary btn-lg"
                    href="{% url 'products:basket_add' product.id %}">
                     Добавить в корзину</a>
             </div>
-            <div class="product-device shadow-sm d-none d-md-block"></div>
-            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
-    </main>
+    </div>
 {% endblock %}

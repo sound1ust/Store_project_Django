@@ -23,13 +23,13 @@
                                         {{ purchased_item.product_name }}
                                     </th>
                                     <td>{{ purchased_item.quantity }}</td>
-                                    <td>{{ purchased_item.price | intcomma }} руб.</td>
-                                    <td>{{ purchased_item.sum | intcomma }} руб.</td>
+                                    <td>{{ purchased_item.price | intcomma }} BYN</td>
+                                    <td>{{ purchased_item.sum | intcomma }} BYN</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-                    <p class="float-right h4 mt-3">Итого {{ order.basket_history.total_sum | intcomma }} руб.</p>
+                    <p class="float-right h4 mt-3">Итого {{ order.basket_history.total_sum | intcomma }} BYN</p>
                 </div>
             </div>
         </div>

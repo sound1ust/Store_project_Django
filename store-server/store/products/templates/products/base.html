@@ -84,7 +84,7 @@
                 </li>
                 {% else %}
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'users:login' %}">Войти <i class="fas fa-sign-in-alt"></i></a>
+                    <a class="nav-link text-light" href="{% url 'users:login' %}">Войти <i class="fas fa-sign-in-alt"></i></a>
                 </li>
                 {% endif %}
             </ul>
@@ -96,6 +96,13 @@
 {% block  content %} {% endblock %}
 
 {% block  footer %} {% endblock %}
+
+<footer class="page-footer text-center">
+    <div class="footer-copyright text-center py-3">Copyright &copy; Xstore 2023
+        <p>All rights reserved</p>
+    </div>
+</footer>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>

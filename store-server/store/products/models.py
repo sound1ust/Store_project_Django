@@ -15,6 +15,13 @@ class ProductCategory(models.Model):
         return self.name
 
 
+class Color(models.Model):
+    name = models.CharField(max_length=128, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField()
@@ -24,8 +31,9 @@ class Product(models.Model):
     promo_image = models.ImageField(upload_to='promo_images', blank=True)
     category = models.ForeignKey(to=ProductCategory, on_delete=models.CASCADE)
     is_new = models.BooleanField(default=False)
-    short_name = models.TextField(max_length=128)
-    slogan = models.TextField(max_length=128, default='', blank=True)
+    short_name = models.CharField(max_length=128)
+    slogan = models.CharField(max_length=128, default='', blank=True)
+    colors = models.ManyToManyField(Color)
 
     class Meta:
         verbose_name = 'Product'
