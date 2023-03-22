@@ -15,13 +15,6 @@ class ProductCategory(models.Model):
         return self.name
 
 
-class Color(models.Model):
-    name = models.CharField(max_length=128, unique=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Product(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField()
@@ -33,7 +26,6 @@ class Product(models.Model):
     is_new = models.BooleanField(default=False)
     short_name = models.CharField(max_length=128)
     slogan = models.CharField(max_length=128, default='', blank=True)
-    colors = models.ManyToManyField(Color)
 
     class Meta:
         verbose_name = 'Product'
