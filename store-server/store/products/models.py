@@ -1,11 +1,11 @@
 from django.db import models
+from django.urls import reverse
 
 from users.models import User
 
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128, unique=True)
-    description = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Category'
@@ -13,6 +13,9 @@ class ProductCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('products:category', args=[str(self.id)])
 
 
 class Product(models.Model):

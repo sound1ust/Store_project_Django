@@ -14,9 +14,11 @@
             <div class="col-lg-3">
 
                 <div class="list-group">
-                    <a href="{% url 'products:index' %}" class="list-group-item">Все</a>
+                    <a href="{% url 'products:index' %}" class="list-group-item text-decoration-none
+                    {% if request.path == '/products/' %} active {% else %} text-dark {% endif %} px-3 py-3 mx-1">Все</a>
                     {% for category in categories %}
-                        <a href="{% url 'products:category' category.id %}" class="list-group-item">{{ category.name }}</a>
+                        <a href="{% url 'products:category' category.id %}" class="list-group-item text-decoration-none
+                    {% if request.path == category.get_absolute_url %} active {% else %} text-dark {% endif %} px-3 py-3 mx-1">{{ category.name }}</a>
                     {% endfor %}
                 </div>
 
@@ -28,7 +30,7 @@
 
                     {% for product in object_list %}
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
+                            <div class="card h-100" id="card">
                                 <a href="{% url 'products:product_detail' product.id %}">
                                     <img class="card-img-top"
                                          src="{{ product.image.url }}"
@@ -36,13 +38,13 @@
                                          style="object-fit: cover; max-width: 18rem; max-length: 18rem;">
                                 </a>
                                 <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="{% url 'products:product_detail' product.id %}">{{ product.name }}</a>
-                                    </h4>
+                                    <h5 class="card-title">
+                                        <a class="text-dark" href="{% url 'products:product_detail' product.id %}">{{ product.name }}</a>
+                                    </h5>
                                     <h5>{{ product.price | intcomma }} BYN</h5>
                                     <p class="card-text">{{ product.description }}</p>
                                 </div>
-                                <div class="card-footer text-center">
+                                <div id="card-footer" class="card-footer text-center border-top-0 bg-white">
                                     <a class="btn btn-outline-success"
                                        href="{% url 'products:basket_add' product.id %}">
                                         Добавить в корзину

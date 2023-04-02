@@ -14,3 +14,32 @@ body {
 .card-body {
     color: black;
 }
+
+#card {
+    transition: transform 0.2s ease;
+}
+
+#card:hover {
+    transform: scale(1.03);
+  transition: transform 0.1s ease;
+}
+
+.card-img-top {
+    width: 253px;
+    height: 253px;
+}
+
+.list-group a {
+    transition: background-color 0.2s ease;
+}
+
+.list-group a:hover {
+    background-color: #e9ecef;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.2s ease;
+    color: white;
+}
+
+.list-group a.active:hover {
+    background-color: #0d6efd;
+}
