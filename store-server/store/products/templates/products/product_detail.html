@@ -27,7 +27,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <div><img src="{{ product.image.url }}" alt="Product Image" class="img-fluid"></div>
+                    {% for product_image in product.images.all %}
+                        <img src="{{ product_image.image.url }}" alt="Product Image" class="img-fluid">
+                    {% endfor %}
+<!--                    <div><img src="{{ product.image.url }}" alt="Product Image" class="img-fluid"></div>-->
                 </div>
             </div>
 

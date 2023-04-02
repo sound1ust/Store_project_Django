@@ -29,11 +29,12 @@
                 <div class="row">
 
                     {% for product in object_list %}
+                    {% with product.images.first as product_image %}
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100" id="card">
                                 <a href="{% url 'products:product_detail' product.id %}">
                                     <img class="card-img-top"
-                                         src="{{ product.image.url }}"
+                                         src="{{ product_image.image.url }}"
                                          alt="{{ product.name }}"
                                          style="object-fit: cover; max-width: 18rem; max-length: 18rem;">
                                 </a>
@@ -42,16 +43,17 @@
                                         <a class="text-dark" href="{% url 'products:product_detail' product.id %}">{{ product.name }}</a>
                                     </h5>
                                     <h5>{{ product.price | intcomma }} BYN</h5>
-                                    <p class="card-text">{{ product.description }}</p>
+                                    <p class="card-text text-muted">{{ product.description }}</p>
                                 </div>
                                 <div id="card-footer" class="card-footer text-center border-top-0 bg-white">
-                                    <a class="btn btn-outline-success"
+                                    <a class="btn btn-outline-dark"
                                        href="{% url 'products:basket_add' product.id %}">
                                         Добавить в корзину
                                     </a>
                                 </div>
                             </div>
                         </div>
+                    {% endwith %}
                     {% endfor %}
                 </div>
 

@@ -21,7 +21,8 @@ body {
 
 #card:hover {
     transform: scale(1.03);
-  transition: transform 0.1s ease;
+    transition: transform 0.1s ease;
+    border-color: black;
 }
 
 .card-img-top {
@@ -36,7 +37,7 @@ body {
 .list-group a:hover {
     background-color: #e9ecef;
     backdrop-filter: blur(10px);
-    transition: background-color 0.2s ease;
+    transition: background-color 0.1s ease;
     color: white;
 }
 
