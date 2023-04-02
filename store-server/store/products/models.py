@@ -5,7 +5,7 @@ from users.models import User
 
 
 def get_upload_to(instance, filename):
-    return f'products_images/{instance.product.id}/{filename}'
+    return f'products_images/{instance.product.category}/{instance.product.name}/{filename}'
 
 
 class ProductCategory(models.Model):

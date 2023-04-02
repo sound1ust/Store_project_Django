@@ -1,3 +1,11 @@
-#content {
-    padding-top: 44px;
+.row {
+    margin-top: 44px;
+}
+
+.row img {
+    width: 500px
+}
+
+#images {
+    text-align: center;
 }
