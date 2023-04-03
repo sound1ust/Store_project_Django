@@ -7,17 +7,33 @@
 {% endblock %}
 
 {% block  content %}
-<div class="row">
-    <div class="col-md-6" id="images">
-        {% for product_image in product.images.all %}
-        <div>
-            <div><img src="{{ product_image.image.url }}" alt="{{ product.name }}" class="img-fluid"></div>
-        </div>
-        {% endfor %}
-    </div>
 
-    <!-- Product Info -->
-    <div class="col-md-6 py-5" id="content">
+<div class="d-flex" id="main-container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="false">
+        <div class="carousel-inner" role="listbox">
+            {% for product_image in product.images.all %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <img src="{{product_image.image.url}}">
+                </div>
+            {% endfor %}
+            <a class="carousel-control-prev pr-5" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next pl-5" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="small-images d-flex" id="small-images">
+            {% for product_image in product.images.all %}
+                <img src="{{product_image.image.url}}" data-target="#carouselExampleSlidesOnly" data-slide-to="{{forloop.counter0}}">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="product-description">
+            <!-- Product Info -->
+    <div class="col-lg-12" id="content">
         <h1>{{ product.name }}</h1>
         <p class="lead my-4">{{ product.price }} BYN</p>
 
@@ -46,4 +62,17 @@
             Добавить в корзину</a>
     </div>
 </div>
+    </div>
+</div>
+
+<script>
+    const smallImages = document.querySelectorAll('#small-images img');
+    smallImages.forEach(img => {
+        img.addEventListener('click', () => {
+            smallImages.forEach(img => img.classList.remove('active'));
+            img.classList.add('active');
+        });
+    });
+</script>
+
 {% endblock %}

@@ -7,22 +7,6 @@
 
 {% block content %}
 <section>
-    <div class="position-relative overflow-hidden p-3 text-center mx-auto border-0">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 fw-normal font-weight-bold">Xstore</h1>
-            <p class="lead fw-normal">Магазин цифровой техники</p>
-            <button id="start-purchase-btn" type="button" class="btn btn-primary btn-lg">
-                <a id="start-purchase-link" href="{% url 'products:index' %}">
-                    Начать покупки
-                </a>
-            </button>
-        </div>
-    </div>
-
-    <!-- START THE FEATURETTES -->
-    <div class="card bg-dark text-light text-center">
-        <h1>Новинки в Xstore | Новинки в Xstore | Новинки в Xstore | Новинки в Xstore</h1>
-    </div>
     {% for product in object_list %}
     <div class="card text-black text-center border-0">
         <img src="{% if product.promo_image %} {{ product.promo_image.url }} {% else %}
@@ -35,6 +19,5 @@
         </div>
     </div>
     {% endfor %}
-    <!-- /END THE FEATURETTES -->
 </section>
 {% endblock %}

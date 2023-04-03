@@ -1,11 +1,37 @@
-.row {
+#main-container {
     margin-top: 44px;
+    justify-content: center;
 }
 
-.row img {
-    width: 500px
+#carouselExampleSlidesOnly,
+#carouselExampleSlidesOnly .carousel-item,
+#carouselExampleSlidesOnly img {
+    width: 500px;
 }
 
-#images {
-    text-align: center;
+.product-description {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next {
+    filter: invert(1) grayscale(1) brightness(0);
+}
+
+#small-images {
+    justify-content: center;
+}
+
+#small-images img {
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#small-images img.active[data-target="#carouselExampleSlidesOnly"] {
+    border: 2px solid black;
 }
