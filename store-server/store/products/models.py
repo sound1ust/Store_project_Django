@@ -32,6 +32,7 @@ class Product(models.Model):
     is_new = models.BooleanField(default=False)
     short_name = models.CharField(max_length=128)
     slogan = models.CharField(max_length=128, default='', blank=True)
+    details = models.JSONField()
 
     class Meta:
         verbose_name = 'Product'

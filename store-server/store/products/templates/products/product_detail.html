@@ -6,14 +6,14 @@
 <link href="{% static 'vendor/css/product-detail.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block  content %}
+{% block content %}
 
 <div class="d-flex" id="main-container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="false">
         <div class="carousel-inner" role="listbox">
             {% for product_image in product.images.all %}
                 <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                    <img src="{{product_image.image.url}}">
+                    <img src="{{ product_image.image.url }}">
                 </div>
             {% endfor %}
             <a class="carousel-control-prev pr-5" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
@@ -27,41 +27,43 @@
         </div>
         <div class="small-images d-flex" id="small-images">
             {% for product_image in product.images.all %}
-                <img src="{{product_image.image.url}}" data-target="#carouselExampleSlidesOnly" data-slide-to="{{forloop.counter0}}">
+            <img src="{{ product_image.image.url }}" data-target="#carouselExampleSlidesOnly"
+                 data-slide-to="{{ forloop.counter0 }}">
             {% endfor %}
         </div>
     </div>
-    <div class="product-description">
-            <!-- Product Info -->
-    <div class="col-lg-12" id="content">
-        <h1>{{ product.name }}</h1>
-        <p class="lead my-4">{{ product.price }} BYN</p>
+    <div class="product-description my-4">
+        <!-- Product Info -->
+        <div class="col-lg-12" id="content">
+            <h2>{{ product.name }}</h2>
+            <h3 class="my-4">{{ product.price | intcomma }} BYN</h3>
 
-        <!-- Product Description -->
-        <p class="text-muted">
-            {{ product.description }}
-        </p>
-
-        <!-- Product Attributes -->
-        {% if product.colors.all %}
-        <div class="row my-4">
-            <div class="col-sm-4">
-                <label>Цвет:</label>
-                <select class="form-control">
-                    {% for color in product.colors.all %}
-                    <option>{{ color }}</option>
-                    {% endfor %}
-                </select>
+            <!-- Lineup -->
+            {% if product.details %}
+            <div class="col-lg-12">
+            {% for el in same_generation_products %}
+            {% with el.images.first as el_image %}
+            <a class='el_images' href="{% url 'products:product_detail' el.id %}"><img src="{{ el_image.image.url }}"></a>
+            {% endwith %}
+            {% endfor %}
             </div>
-        </div>
-        {% endif %}
+            {% endif %}
 
-        <!-- Add to Cart Button -->
-        <a class="btn btn-primary btn-lg"
-           href="{% url 'products:basket_add' product.id %}">
-            Добавить в корзину</a>
-    </div>
-</div>
+            <!-- Add to Cart Button -->
+            <a class="btn btn-primary btn-lg mb-4"
+               href="{% url 'products:basket_add' product.id %}">
+                Добавить в корзину</a>
+
+            <!-- Product Details -->
+            {% if product.details %}
+            <h3>Характеристики</h3>
+        <ul class="no-bullets">
+                {% for key, value in product.details.items %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
     </div>
 </div>
 

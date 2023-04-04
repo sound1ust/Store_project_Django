@@ -48,7 +48,13 @@ class AboutView(TitleMixin, TemplateView):
 
 def product_detail(request, product_id):
     product = Product.objects.get(id=product_id)
-    return render(request, 'products/product_detail.html', {'product': product})
+
+    if product.details:
+        same_generation_products = Product.objects.filter(details__contains={'Поколение': product.details['Поколение']})
+    else:
+        same_generation_products = {}
+    return render(request, 'products/product_detail.html',
+                  {'product': product, 'same_generation_products': same_generation_products})
 
 
 @login_required

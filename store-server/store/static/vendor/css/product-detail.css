@@ -10,7 +10,6 @@
 }
 
 .product-description {
-    height: 500px;
     display: flex;
     align-items: center;
     margin-left: 100px;
@@ -34,4 +33,21 @@
 
 #small-images img.active[data-target="#carouselExampleSlidesOnly"] {
     border: 2px solid black;
+}
+
+.no-bullets {
+        list-style-type: none;
+        padding: 0px;
+    }
+
+.el_images img {
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#content h2 {
+    display: inline-block;
+    width: 500px;
 }
