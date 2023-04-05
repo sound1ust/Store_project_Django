@@ -35,6 +35,11 @@
     border: 2px solid black;
 }
 
+#small-images img:hover, .el_images img:hover
+ {
+    background-color: #e7e7e7;
+}
+
 .no-bullets {
         list-style-type: none;
         padding: 0px;
@@ -47,7 +52,11 @@
     border-radius: 5px;
 }
 
+.el_images img.active {
+    border: 1px solid black;
+}
+
 #content h2 {
     display: inline-block;
-    width: 500px;
+    width: 600px;
 }

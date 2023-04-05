@@ -50,11 +50,15 @@ def product_detail(request, product_id):
     product = Product.objects.get(id=product_id)
 
     if product.details:
-        same_generation_products = Product.objects.filter(details__contains={'Поколение': product.details['Поколение']})
+        gen_products_by_color = Product.objects.filter(details__contains={'Поколение': product.details['Поколение'],
+                                                                          'Память': product.details['Память']})
+        gen_products_by_ram = Product.objects.filter(details__contains={'Поколение': product.details['Поколение'],
+                                                                        "Цвет": product.details['Цвет']})
     else:
-        same_generation_products = {}
+        gen_products_by_ram, gen_products_by_color = {}, {}
     return render(request, 'products/product_detail.html',
-                  {'product': product, 'same_generation_products': same_generation_products})
+                  {'product': product, 'gen_products_by_ram': gen_products_by_ram,
+                   'gen_products_by_color': gen_products_by_color})
 
 
 @login_required
@@ -69,7 +73,7 @@ def basket_add(request, product_id):
         basket.quantity += 1
         basket.save()
 
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])   # Возвращает текущую страницу
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])  # Возвращает текущую страницу
 
 
 @login_required

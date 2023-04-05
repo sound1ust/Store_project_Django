@@ -38,30 +38,46 @@
             <h2>{{ product.name }}</h2>
             <h3 class="my-4">{{ product.price | intcomma }} BYN</h3>
 
-            <!-- Lineup -->
-            {% if product.details %}
-            <div class="col-lg-12">
-            {% for el in same_generation_products %}
-            {% with el.images.first as el_image %}
-            <a class='el_images' href="{% url 'products:product_detail' el.id %}"><img src="{{ el_image.image.url }}"></a>
-            {% endwith %}
-            {% endfor %}
-            </div>
-            {% endif %}
-
             <!-- Add to Cart Button -->
             <a class="btn btn-primary btn-lg mb-4"
                href="{% url 'products:basket_add' product.id %}">
                 Добавить в корзину</a>
+
+            <!-- Lineup -->
+            {% if product.details %}
+            <div class="col-lg-12">
+                <strong>Цвет корпуса: </strong>
+            {% for el in gen_products_by_color %}
+            {% with el.images.first as el_image %}
+            <a class='el_images ml-3' href="{% url 'products:product_detail' el.id %}">
+                <img class="{% if el.details.Цвет == product.details.Цвет %} active {% endif %}"
+                     src="{{ el_image.image.url }}"></a>
+            {% endwith %}
+            {% endfor %}
+            </div>
+            {% if product.details.Память %}
+            <div class="col-lg-12 d-flex my-3 text-center">
+                <strong class="modal-dialog-centered">Объем памяти: </strong>
+            {% for el in gen_products_by_ram %}
+            <a id="ram" class="text-decoration-none mx-2" href="{% url 'products:product_detail' el.id %}">
+                <button class="btn btn-outline-primary {% if el.details.Память == product.details.Память %} active {% endif %}">
+                    {{ el.details.Память }}
+                </button></a>
+            {% endfor %}
+            </div>
+            {% endif %}
 
             <!-- Product Details -->
             {% if product.details %}
             <h3>Характеристики</h3>
         <ul class="no-bullets">
                 {% for key, value in product.details.items %}
+                    {% if value %}
                     <li><strong>{{ key }}:</strong> {{ value }}</li>
+                    {% endif %}
                 {% endfor %}
         </ul>
+        {% endif %}
         {% endif %}
         </div>
     </div>
