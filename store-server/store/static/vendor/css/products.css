@@ -15,6 +15,10 @@ body {
     color: black;
 }
 
+.card-title a {
+    font-weight: normal;
+}
+
 #card {
     transition: transform 0.2s ease;
 }

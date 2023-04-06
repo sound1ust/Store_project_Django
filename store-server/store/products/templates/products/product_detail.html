@@ -9,7 +9,7 @@
 {% block content %}
 
 <div class="d-flex" id="main-container">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="false">
+    <div id="carouselExampleSlidesOnly" class="carousel slide mx-5" data-interval="false">
         <div class="carousel-inner" role="listbox">
             {% for product_image in product.images.all %}
                 <div class="carousel-item {% if forloop.first %} active {% endif %}">
