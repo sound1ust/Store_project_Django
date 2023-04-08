@@ -2,20 +2,13 @@
 
 My first project on Django
 
-![index](https://user-images.githubusercontent.com/111009132/226716835-b1ad5f0a-2742-4013-a92f-296cbef4fee1.png)
-
-![products](https://user-images.githubusercontent.com/111009132/226716829-3edd23d0-280c-4d53-8a59-d85f707ae71e.png)
-
-![product](https://user-images.githubusercontent.com/111009132/226716822-15269a77-5fde-4322-8a5e-9b8f69c4c732.png)
-
-![auth](https://user-images.githubusercontent.com/111009132/226716848-10bc2fff-89fc-40e4-8f64-693ad481cc36.png)
-
-![reg](https://user-images.githubusercontent.com/111009132/226716859-6d8b603d-cae1-48be-baa3-6b44907f791b.png)
-
-![profile](https://user-images.githubusercontent.com/111009132/226716855-406bc597-f3cb-46cc-97b7-5fe05a9ecc24.png)
-
-![order-create](https://user-images.githubusercontent.com/111009132/226716850-6d1ab8be-e9c0-430e-a2e6-e0d9c3cbebd3.png)
-
-![orders](https://user-images.githubusercontent.com/111009132/226716852-62f338fb-6128-41a5-84cd-e84cda79ec01.png)
-
-![order](https://user-images.githubusercontent.com/111009132/226716851-cc8b7229-157d-4bdd-914f-3f91049b271d.png)
+![ 1](https://user-images.githubusercontent.com/111009132/230742253-f895d930-4716-4b9a-be38-d8a2ade34c03.png)
+![2](https://user-images.githubusercontent.com/111009132/230742260-64207e7c-bffa-4644-b329-243d7b6000ae.png)
+![3](https://user-images.githubusercontent.com/111009132/230742261-9f802172-bddd-4908-985e-46bfadad4318.png)
+![4](https://user-images.githubusercontent.com/111009132/230742263-60c3fb3a-5cdd-468d-9a56-eced9bdfa228.png)
+![5](https://user-images.githubusercontent.com/111009132/230742264-c321f9eb-158b-4b6e-bd9d-27333709952e.png)
+![6](https://user-images.githubusercontent.com/111009132/230742265-08773969-91c2-405d-811b-a7b6afa4beba.png)
+![7](https://user-images.githubusercontent.com/111009132/230742266-7e3d87c0-b091-4e8e-81c1-cf55a71a8e9c.png)
+![8](https://user-images.githubusercontent.com/111009132/230742267-5691a6e2-86e1-47e2-a197-15e33a01178b.png)
+![9](https://user-images.githubusercontent.com/111009132/230742268-10c72548-c3af-4762-b95d-787acea006dd.png)
+![10](https://user-images.githubusercontent.com/111009132/230742270-40d1448f-ceb3-4bf6-8ffb-8df3f83918f7.png)
