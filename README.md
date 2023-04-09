@@ -1,6 +1,7 @@
 # Store_project_Django
 
 My first project on Django
+Link: http://45.8.250.193/
 
 ![ 1](https://user-images.githubusercontent.com/111009132/230742253-f895d930-4716-4b9a-be38-d8a2ade34c03.png)
 ![2](https://user-images.githubusercontent.com/111009132/230742260-64207e7c-bffa-4644-b329-243d7b6000ae.png)
