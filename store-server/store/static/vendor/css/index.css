@@ -15,3 +15,13 @@ body {
     text-decoration: none;
     color: white;
 }
+
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    transition: background-color 0.1s ease;
+}
+
+.card-img-overlay:hover {
+    background-color: rgba(0, 0, 0, .100);
+    transition: background-color 0.1s ease;
+}
