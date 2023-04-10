@@ -34,6 +34,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('orders/', include('orders.urls', namespace='orders')),
     path("", include(static_urlpatterns)),
+    path("api/", include("api.urls", namespace="api")),
 ]
 
 if settings.DEBUG:

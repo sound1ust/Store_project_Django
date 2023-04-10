@@ -16,3 +16,5 @@ django-redis==5.2.0
 redis==4.5.1
 
 yookassa==2.3.5
+
+djangorestframework~=3.14.0
