@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import environ
-
 from pathlib import Path
+
+import environ
 
 env = environ.Env(
     # set casting, default value
@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     # 'debug_toolbar',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'products',
     'orders',
@@ -242,5 +243,8 @@ SHOP_ID = env('SHOP_ID')
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 6
+    'PAGE_SIZE': 6,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }

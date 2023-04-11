@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.static import serve
+from rest_framework.authtoken.views import obtain_auth_token
 
 from products.views import IndexView
 
@@ -35,6 +36,7 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path("", include(static_urlpatterns)),
     path("api/", include("api.urls", namespace="api")),
+    path('api-token-auth/', obtain_auth_token),
 ]
 
 if settings.DEBUG:
